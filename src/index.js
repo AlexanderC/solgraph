@@ -37,14 +37,14 @@ const graphNodeName = name => {
 export default source => {
 
   // parse the Solidity source
-  let ast
-  try {
-    ast = solparser.parse(source)
-  } catch (e) {
-    console.error('Parse error')
-    console.error(e)
-    process.exit(1)
-  }
+  let ast = solparser.parse(source);
+//   try {
+//     ast = solparser.parse(source)
+//   } catch (e) {
+//     console.error('Parse error')
+//     console.error(e)
+//     process.exit(1)
+//   }
 
   // get a list of all function nodes
   const functionNodes = flatten(ast).filter(propEquals('type', 'FunctionDeclaration'))
